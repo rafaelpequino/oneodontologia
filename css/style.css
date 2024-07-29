@@ -164,7 +164,6 @@ section#home {
     width: 100%;
     height: auto;
     min-height: 400px;
-    padding: 50px 30px;
     background-image: url(../img/consultorio-bk.webp);
     background-position: center center;
     background-repeat: no-repeat;
@@ -174,6 +173,7 @@ section#home {
 
 #inside-home {
     width: 100%;
+    padding: 50px 30px;
 }
 
 #home::before {
