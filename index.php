@@ -1,0 +1,374 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recolher dados do formulário
+    $nome = $_POST["fullname"];
+    $email = $_POST["email"];
+    $celular = $_POST["whatsapp"];
+    $mensagem = $_POST["idea"];
+    $destinatario = "one.odontologia.moema";
+    $assunto = "Contato via site de $nome";
+
+    // Construir corpo do e-mail
+    $corpo_email = "Nome: $nome\n";
+    $corpo_email .= "Email: $email\n";
+    $corpo_email .= "Whatsapp: $celular\n\n";
+    $corpo_email .= "Mensagem:\n$mensagem";
+
+    // Configurar cabeçalhos
+    $headers = "De: $email\r\n";
+    $headers .= "Responder para: $email\r\n";
+
+    // Enviar e-mail
+    if (mail($destinatario, $assunto, $corpo_email, $headers)) {
+        echo "<script>alert('E-mail enviado com sucesso!')</script>";
+    } else {
+        echo "<script>alert('Oops, houve algum erro. Tente novamente mais tarde!')</script>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--METADADOS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Somos uma agência de tecnologia e audiovisual. Nosso objetivo é elevar o nível da sua empresa. E uma equipe pronta não só para te atender, mas superar suas expectativas. Transformando suas ideias em vídeos e incríveis. Junte-se a nós na jornada de criar algo extraordinário.">
+    <meta name="keywords" content="Tecnologia, Audiovisual, Empreendedorismo, Edição, Vídeos">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Sneets - Tech & Films">
+    <meta property="og:description" content="Somos uma agência de tecnologia e audiovisual. Nosso objetivo é elevar o nível da sua empresa. E uma equipe pronta não só para te atender, mas superar suas expectativas. Transformando suas ideias em vídeos e fotos incríveis. Junte-se a nós na jornada de criar algo extraordinário.">
+    <meta property="og:image" content="./img/foto_equipe.webp">
+    <!--TITLE-->
+    <title>One Odontologia - Invisalign em Moema</title>
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="./img/favicon_io/favicon.ico" type="image/x-icon">
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/a474f4b275.js" crossorigin="anonymous"></script>
+    <!--BIBLIOTECA AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header">
+        <div id="inside-header">
+            <a href="http://invisalignemmoema.com.br/" target="_self"><img src="./img/first-logo.webp" alt="Logo da One Odontologia - Invisalign em Moema"></a>
+        </div>
+    </header>
+    
+    <section id="home">
+        <div id="inside-home">
+            <h1 class="white-color text-center margin-bottom">Tecnologia de ponta para o seu melhor sorriso</h1>
+            <h3 class="white-color text-center margin-bottom">Clínica odontológica em Moema - Tratamento Invisalign</h3>
+            <a href="https://wa.me/+5511943859731" target="_blank" class="first-btn align-center"><i class="fa-brands fa-whatsapp"></i> Transforme seu sorriso</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div id="inside-about">
+            <div class="text-about">
+                <h1 class="margin-bottom">Transforme o seu sorriso com a tecnologia <span>Invisalign©</span></h1>
+                <p class="margin-bottom">Invisalign© é tecnologia de ponta para transformar o seu sorriso, esqueça os tradicionais aparelhos metálicos.</p>
+
+                <div class="list-positive">
+                    <div class="item-positive">
+                        <div class="icon-item">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="text-item">
+                            <p><strong>Invisível e Discreto:</strong> ninguém precisa saber que você está usando aparelho.</p>
+                        </div>
+                    </div>
+                    <div class="item-positive">
+                        <div class="icon-item">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="text-item">
+                            <p><strong>Confortável:</strong> sem metais ou fios irritando e machucando sua boca.</p>
+                        </div>
+                    </div>
+                    <div class="item-positive">
+                        <div class="icon-item">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="text-item">
+                            <p><strong>Resultados rápidos:</strong> você verá resultados previsíveis e mais rápidos.</p>
+                        </div>
+                    </div>
+                    <div class="item-positive">
+                        <div class="icon-item">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="text-item">
+                            <p><strong>Removível:</strong> tire os alinhadores para comer, escovar os dentes e usar fio dental.</p>
+                        </div>
+                    </div>
+                    <div class="item-positive">
+                        <div class="icon-item">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div class="text-item">
+                            <p><strong>Personalizado para você:</strong> alinhadores feitos sob medida.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/+5511943859731" target="_blank" class="second-btn margin-top"><i class="fa-brands fa-whatsapp"></i> Transforme seu sorriso</a>
+            </div>
+
+            <div class="img-about">
+                <img src="./img/aparelho-invisalign.webp" alt="Foto de uma paciente utilizando o aparelho Invisalign©">
+            </div>
+        </div>
+    </section>
+
+    <section id="doctor">
+        <div id="inside-doctor">
+            <div class="img-doctor">
+                <img src="./img/dra-larissa.webp" alt="Foto da Dra. Larissa Martini (CRO 119343), nomeada Top Doctor Invisalign©">
+            </div>
+
+            <div class="info-doctor">
+                <h1 class="margin-bottom">Referência em tratamentos <span>Invisalign©</span></h1>
+                <p class="margin-bottom">A Dra. Larissa Martini (CRO 119343) faz parte do seleto grupo  de doutores que mais tratou casos no Brasil com sistema Invisalign©</p>
+                <a href="https://wa.me/+5511943859731" target="_blank" class="second-btn margin-top"><i class="fa-brands fa-whatsapp"></i> Vamos conversar?</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoiments">
+        <div id="inside-depoiments">
+            <h1 class="white-color">O que nossos pacientes dizem...</h1>
+            <div class="list-depoiments">
+
+                <div class="depoiment">
+                    <div class="img-depoiment">
+                        <!--<img src="" alt="Foto do paciente da Dra. Larissa Martini (CRO 119343), nomeada Top Doctor Invisalign©">-->
+                    </div>
+
+                    <div class="name-depoiment">
+                        <h3>Rafael Pequino Freire</h3>
+                    </div>
+
+                    <div class="stars-depoiment">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="text-depoiments">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla libero, aliquam sed dolore quidem quas nobis possimus illum accusamus nihil natus.</p>
+                    </div>
+                </div>
+
+                <div class="depoiment">
+                    <div class="img-depoiment">
+                        <!--<img src="" alt="Foto do paciente da Dra. Larissa Martini (CRO 119343), nomeada Top Doctor Invisalign©">-->
+                    </div>
+
+                    <div class="name-depoiment">
+                        <h3>Rafael Pequino Freire</h3>
+                    </div>
+
+                    <div class="stars-depoiment">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="text-depoiments">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla libero, aliquam sed dolore quidem quas nobis possimus illum accusamus nihil natus.</p>
+                    </div>
+                </div>
+
+                <div class="depoiment">
+                    <div class="img-depoiment">
+                        <!--<img src="" alt="Foto do paciente da Dra. Larissa Martini (CRO 119343), nomeada Top Doctor Invisalign©">-->
+                    </div>
+
+                    <div class="name-depoiment">
+                        <h3>Rafael Pequino Freire</h3>
+                    </div>
+
+                    <div class="stars-depoiment">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="text-depoiments">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla libero, aliquam sed dolore quidem quas nobis possimus illum accusamus nihil natus.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison">
+        <div id="inside-comparison">
+            <h1 class="text-center">Antes X Depois do <span>Tratamento Invisalign©</span></h1>
+            <div class="cro text-center">Dra. Larissa Martini CRO/SP 119343</div>
+            <div class="list-comparison">
+                <div class="case">
+                    <img src="./img/AntesXDepois/antesxdepois01.webp" alt="Foto de comparação do antes e depois do Tratamento Invisalign© realizado pela Dra. Larissa Martini (CRO 119343)">
+                </div>
+                
+                <div class="case">
+                    <img src="./img/AntesXDepois/antesxdepois02.webp" alt="Foto de comparação do antes e depois do Tratamento Invisalign© realizado pela Dra. Larissa Martini (CRO 119343)">
+                </div>
+                
+                <div class="case">
+                    <img src="./img/AntesXDepois/antesxdepois03.webp" alt="Foto de comparação do antes e depois do Tratamento Invisalign© realizado pela Dra. Larissa Martini (CRO 119343)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div id="inside-faq">
+            <p class="margin-bottom text-center cro">Tem dúvidas?</p>
+            <h1 class="margin-bottom text-center">Perguntas <span>Frequentes</span></h1>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="question" id="question01">
+                        Pra quem é o tratamento Invisalign? <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <p class="answer" id="answer01">
+                        O tratamento Invisalign® pode ser uma ótima solução para adultos, adolescentes e crianças que procuram um método praticamente invisível para remodelar o sorriso. Nossas inovações e avanços tecnológicos permitem tratar quase todos os dentes comuns – problemas com dentes tortos e mordida, de simples a complexos – tudo sem interromper sua vida atarefada. E, graças a um ponto azul discreto na parte externa dos alinhadores de adolescentes, os pais podem ter certeza de que seus filhos os estão usando de modo adequado.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="question" id="question02">
+                        Preciso fazer nos superiores e inferiores ao mesmo tempo? <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <p class="answer" id="answer02">
+                        As opções de tratamento Invisalign® estão disponíveis para ambos os arcos ou apenas para um deles, superior ou inferior. Consulte o ortodontista para saber suas necessidades individuais.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="question" id="question03">
+                        Quanto tempo durará o tratamento? <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <p class="answer" id="answer03">
+                        A duração do tratamento depende de múltiplos fatores, como o número de alinhadores que a complexidade do seu caso exige e a frequência com que você usa os alinhadores. O ortodontista determinará exatamente quanto tempo o tratamento durará com base em necessidades específicas. Em média, o tempo de tratamento Invisalign® é de 9 a 18 meses, embora você possa começar a ver resultados em questão de semanas.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="question" id="question06">
+                        Qual o processo do tratamento? <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <p class="answer" id="answer06">
+                        O tratamento Invisalign® tem início com o ortodontista especialista avaliando seus dentes e traçando um plano de tratamento digital preciso e personalizado, que exibe a transformação passo a passo do sorriso. Depois de aprovar o plano, os alinhadores exclusivos serão confeccionados. Você usará cada conjunto de alinhadores de 20 a 22 horas por dia. Eles serão trocados para um novo conjunto de alinhadores a cada 1 a 2 semanas, conforme indicado pelo ortodontista. Cada conjunto de alinhadores irá gradual e suavemente deslocar os dentes, de acordo com o plano de tratamento, até chegar ao novo e belo sorriso.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="question" id="question07">
+                        Quantas horas por dia devo usar os alinhadores? <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <p class="answer" id="answer07">
+                        Para obter melhores resultados, use os alinhadores transparentes Invisalign® de 20 a 22 horas por dia e os remova apenas para comer, beber, escovar os dentes e usar fio dental.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <div class="question" id="question08">
+                        Quanto custa o tratamento? <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <p class="answer" id="answer08">
+                        Na maioria dos casos, o custo do tratamento Invisalign® é semelhante ao custo dos aparelhos ortodônticos convencionais. O ortodontista determinará o custo do tratamento com base na complexidade do seu caso e em quantos alinhadores você precisará.
+                    </p>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/+5511943859731" target="_blank" class="second-btn margin-top align-center"><i class="fa-brands fa-whatsapp"></i> Transforme seu sorriso</a>
+        </div>
+    </section>
+    
+    <section id="break">
+        <div id="inside-break">
+            <div class="video-clinica">
+                <video controls poster="./img/thumbnail.jpg">
+                    <source src="./img/invisalign-video.mp4" type="video/mp4">
+                    <source src="./img/invisalign-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="little-box">
+                <img src="./img/invisalign-picture.webp" alt="Foto dos alinhadores com a tecnologia Invisalign©">
+            </div>
+        </div>
+    </section>
+
+    <section id="local">
+        <div id="inside-local">
+            <div class="local-info">
+                <div class="cro white-color">Unidade Moema</div>
+                <h1 class="white-color margin-top margin-bottom">Próximo a estação Moema do Metrô</h1>
+                <p class="white-color">Av. Lavandisca 741, cj. 75 - Moema, São Paulo - SP</p>
+                <p class="white-color">Atendimento de Segunda à Sexta - 09h às 18h</p>
+                <a href="https://wa.me/+5511943859731" target="_blank" class="second-btn margin-top"><i class="fa-brands fa-whatsapp"></i> Transforme seu sorriso</a>
+            </div>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0282778078194!2d-46.66582872466866!3d-23.60331877877102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b283cf57db5%3A0x83dec56e52878845!2sOne%20Odontologia%20Moema%20-%20Invisalign%20em%20Moema!5e0!3m2!1spt-BR!2sbr!4v1722260009971!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div id="inside-contato">
+            <div class="contact-info" data-aos="fade-right">
+                <h2 class="margin-bottom">Solicite um <span>orçamento</span></h2>
+                <p>Descubra como podemos transformar seu sorriso e sua autoestima sem compromisso!</p>
+                <div class="email-info">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
+                        <path
+                            d="M44.625 9.5625H6.375C5.52962 9.5625 4.71887 9.89832 4.1211 10.4961C3.52332 11.0939 3.1875 11.9046 3.1875 12.75V38.25C3.1875 39.0954 3.52332 39.9061 4.1211 40.5039C4.71887 41.1017 5.52962 41.4375 6.375 41.4375H44.625C45.4704 41.4375 46.2811 41.1017 46.8789 40.5039C47.4767 39.9061 47.8125 39.0954 47.8125 38.25V12.75C47.8125 11.9046 47.4767 11.0939 46.8789 10.4961C46.2811 9.89832 45.4704 9.5625 44.625 9.5625ZM41.1187 12.75L25.5 23.5556L9.88125 12.75H41.1187ZM6.375 38.25V14.2003L24.5916 26.8069C24.8583 26.992 25.1753 27.0911 25.5 27.0911C25.8247 27.0911 26.1417 26.992 26.4084 26.8069L44.625 14.2003V38.25H6.375Z"
+                            fill="#002d72" />
+                    </svg>
+                    <p> one.odontologia.moema@gmail.com</p>
+
+                </div>
+            </div>
+
+            <div class="contact-form" data-aos="fade-left">
+                <form action="" method="post">
+                    <input type="text" name="fullname" id="fullname" placeholder="Nome completo">
+                    <input type="email" name="email" id="email" placeholder="Seu principal e-mail">
+                    <input type="text" name="whatsapp" id="whatsapp" placeholder="Número de Whatsapp">
+                    <textarea name="idea" id="idea" rows="5" placeholder="Qual a sua ideia?"></textarea>
+
+                    <button type="submit">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div id="inside-footer">
+            <a href="http://invisalignemmoema.com.br/" target="_self"><img src="./img/white-logo.webp" alt="Logo da One Odontologia - Invisalign em Moema"></a>
+            <p class="text-center white-color">© 2024 One Odontologia Moema. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+
+    <!--JAVASCRIPT-->
+    <script src="./js/script.js"></script>
+    <!--SCRIPT BIBLIOTECA AOS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

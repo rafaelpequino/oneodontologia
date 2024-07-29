@@ -1,0 +1,755 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --first-color: #002d72;
+    --black-color: #262626;
+    --white-color: #fff;
+
+    --font-text: 'Helvetica', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-text);
+
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    margin: auto;
+    scroll-behavior: smooth;
+}
+
+
+/*INÍCIO HEADER*/
+
+header#header {
+    width: 100%;
+    padding: 30px;
+}
+
+#inside-header {
+    width: 100%;
+    max-width: max-content;
+    margin: auto;
+}
+
+#inside-header> a {
+    display: block;
+    width: 300px;
+    padding-bottom: 30px;
+}
+
+#inside-header> a > img {
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    #inside-header > a {
+        width: 240px;
+    }
+}
+
+/*FIM HEADER*/
+
+
+/*INÍCIO DEFINIÇÕES*/
+
+h1 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+span {
+    color: var(--first-color);
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+.white-color {
+    color: var(--white-color);
+}
+
+.first-color {
+    color: var(--first-color);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.align-center {
+    margin: auto;
+}
+
+.margin-top {
+    margin-top: 30px;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+.first-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--white-color);
+    color: var(--first-color);
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: max-content;
+    font-size: 20px;
+}
+
+.second-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: max-content;
+    font-size: 20px;
+}
+
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .first-btn, .second-btn, p {
+        font-size: 18px;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 30px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+    
+    p, .first-btn, .second-btn {
+        font-size: 16px;
+    }
+}
+
+/*FIM DEFINIÇÕES*/
+
+
+
+/*INÍCIO HOME*/
+
+section#home {
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    padding: 50px 30px;
+    background-image: url(../img/consultorio-bk.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#inside-home {
+    width: 100%;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.500);
+    z-index: 1;
+}
+
+#inside-home {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/*FIM HOME*/
+
+
+
+/*INÍCIO ABOUT*/
+
+section#about {
+    width: 100%;
+    padding: 50px 30px;
+}
+
+#inside-about {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: auto;
+}
+
+
+.item-positive {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+.item-positive > .icon-item {
+    font-size: 3rem;
+    color: var(--first-color);
+}
+
+.img-about {
+    width: auto;
+    max-width: 35%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.img-about > img {
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .img-doctor, .img-about {
+        max-width: 40%;
+    }
+}
+
+@media (max-width: 900px) {
+    #inside-about {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .img-about {
+        max-width: none;
+        max-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .item-positive > .icon-item {
+        font-size: 2.2rem;    
+    }
+}
+
+/*FIM ABOUT*/
+
+
+
+/*INÍCIO DOCTOR*/
+
+section#doctor {
+    width: 100%;
+    padding: 30px 30px 0 30px;
+}
+
+#inside-doctor {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: auto;
+}
+
+.item-positive {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 10px;
+} 
+
+.img-doctor {
+    width: auto;
+    max-width: 35%;
+    overflow: hidden;
+}
+
+.img-doctor > img {
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+
+@media (max-width: 900px) {
+    #inside-doctor {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .img-doctor {
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/*FIM DOCTOR*/
+
+
+
+/*INÍCIO DEPOIMENTS*/
+
+section#depoiments {
+    width: 100%;
+    background-color: var(--first-color);
+    padding: 50px 30px;
+}
+
+#inside-depoiments {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+}
+
+.list-depoiments {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.depoiment {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--white-color);
+    padding: 50px 30px;
+    border-radius: 5px;
+}
+
+.img-depoiment {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    margin: 0 auto 20px;
+}
+
+.stars-depoiment {
+    margin: 20px 0 ;
+    color: #F0DA16;
+}
+
+
+@media (max-width: 1000px) {
+    .list-depoiments {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/*FIM DEPOIMENTS*/
+
+
+
+
+/*INÍCIO COMPARISON*/
+
+section#comparison {
+    width: 100%;
+    padding: 50px 30px;
+}
+
+#inside-comparison {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+}
+
+.cro {
+    letter-spacing: 0.5em;
+    opacity: .8;
+    margin-top: 30px;
+}
+
+.list-comparison {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.case {
+    width: 100%;
+    overflow: hidden;
+}
+
+.case > img {
+    width: 100%;
+}
+
+
+@media (max-width: 500px) {
+
+    .cro {
+        letter-spacing: 0.3em;
+    }
+
+    .list-comparison {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+}
+
+/*FIM COMPARISON*/
+
+
+/*INÍCIO FAQ*/
+
+section#faq {
+    width: 100%;
+    padding: 0 30px 50px;
+}
+
+#inside-faq {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    
+}
+
+.faq-list {
+    width: 100%;
+    margin: 20px auto 50px;
+}
+
+.faq-item {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: .3s;
+    outline: 1px solid rgb(240, 240, 240);
+    margin-top: 20px;
+}
+
+.faq-item:hover {
+    cursor: pointer;
+    outline: 1px solid rgb(177, 177, 177);
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 1.1em;
+}
+
+.question > i {
+    display: block;
+    color: var(--second-color);
+}
+
+.answer {
+    opacity: 0.8;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    font-size: 1.1em;
+}
+
+.answer.open {
+    padding: 20px 0;
+}
+
+
+/*FIM FAQ*/
+
+
+/*INÍCIO BREAK*/
+
+section#break {
+    width: 100%;
+    padding: 0 30px;
+}
+
+#inside-break {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: max-content;
+    gap: 50px;
+}
+
+.video-clinica {
+    height: 65vh;
+}
+
+.video-clinica > video {
+    height: 100%;
+}
+
+.little-box {
+    max-height: 65vh;
+    overflow: hidden;
+    padding-bottom: -30px;
+}
+
+.little-box > img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: -10px;
+}
+
+@media (max-width: 800px) {
+    
+    #inside-break {
+        max-width: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-clinica {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+    
+    .video-clinica > video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*FIM BREAK*/
+
+
+/*INÍCIO LOCAL*/
+
+section#local {
+    width: 100%;
+    padding: 50px 30px;
+    background-color: var(--black-color);
+}
+
+#inside-local {
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.local-info > p {
+    opacity: .8;
+    margin-bottom: 10px;
+}
+
+.map {
+    overflow: hidden;
+    border-radius: 30px;
+    max-width: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map > iframe {
+    width: 600px;
+    height: 450px; 
+}
+
+@media (max-width: 1000px) {
+    
+    #inside-local {
+        flex-direction: column;
+    }
+
+    .map, .local-info {
+        max-width: none;
+        width: 100%;
+    }
+
+    .map > iframe {
+        width: 100%;
+        height: 450px; 
+    }
+}
+
+@media (max-width: 400px) {
+
+    .map > iframe {
+        height: 350px; 
+    }
+}
+
+/*FIM LOCAL*/
+
+
+
+/*INÍCIO SESSÃO CONTATO*/
+#contato {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 50px 5vw;
+}
+
+#inside-contato {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.email-info {
+    max-width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form > form {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form > form > input,
+.contact-form > form > textarea {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid var(--first-color);
+    padding: 12px 20px;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.contact-form > form > button {
+    display: block;
+    width: 100%;
+    min-width: max-content;
+    text-decoration: none;
+    padding: 15px 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--first-color);
+    color: var(--white-color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    #inside-contato {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-form > form {
+        margin: auto;
+    }
+
+    .email-info {
+        width: max-content;
+        margin: 30px auto 0;
+        gap: 10px;
+    }
+
+    .email-info > p {
+        font-size: 14px;
+    }
+}
+
+/*FIM SESSÃO CONTATO*/
+
+
+/*INÍCIO FOOTER*/
+
+footer {
+    background-color: var(--first-color);
+    padding: 50px 30px;
+}
+
+#inside-footer> a {
+    display: block;
+    width: 300px;
+    padding-bottom: 30px;
+    margin: auto;
+}
+
+#inside-footer> a > img {
+    width: 100%;
+}
+
+#inside-footer > p {
+    opacity: .8;
+}
+
+@media (max-width: 500px) {
+    #inside-footer > a {
+        width: 240px;
+    }
+}
